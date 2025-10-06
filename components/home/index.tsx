@@ -1,0 +1,226 @@
+// Code for Home page
+import { Input } from "../ui/input"
+import Link from "next/link"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
+const product = [
+    {
+        name: "Acme Turbo Blender",
+        description: "High-powered blending for smoothies",
+        price: 99.99,
+        image: "assets/images/products/1.jpg",
+    }, {
+        name: "Acme Ergonomic Desk Chair",
+        description: "Comfortable and supportive seating",
+        price: 199.99,
+        image: "assets/images/products/2.jpg",
+    }, {
+        name: "Acme Wireless Headphones",
+        description: "Immersive audio experience",
+        price: 79.99,
+        image: "assets/images/products/3.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/4.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/5.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/6.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/7.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/8.jpg",
+    }, {
+        name: "Acme Turbo Blender",
+        description: "High-powered blending for smoothies",
+        price: 99.99,
+        image: "assets/images/products/1.jpg",
+    }, {
+        name: "Acme Ergonomic Desk Chair",
+        description: "Comfortable and supportive seating",
+        price: 199.99,
+        image: "assets/images/products/2.jpg",
+    }, {
+        name: "Acme Wireless Headphones",
+        description: "Immersive audio experience",
+        price: 79.99,
+        image: "assets/images/products/3.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/4.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/5.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/6.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/7.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/8.jpg",
+    }, {
+        name: "Acme Turbo Blender",
+        description: "High-powered blending for smoothies",
+        price: 99.99,
+        image: "assets/images/products/1.jpg",
+    }, {
+        name: "Acme Ergonomic Desk Chair",
+        description: "Comfortable and supportive seating",
+        price: 199.99,
+        image: "assets/images/products/2.jpg",
+    }, {
+        name: "Acme Wireless Headphones",
+        description: "Immersive audio experience",
+        price: 79.99,
+        image: "assets/images/products/3.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/4.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/5.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/6.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/7.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/8.jpg",
+    }, {
+        name: "Acme Turbo Blender",
+        description: "High-powered blending for smoothies",
+        price: 99.99,
+        image: "assets/images/products/1.jpg",
+    }, {
+        name: "Acme Ergonomic Desk Chair",
+        description: "Comfortable and supportive seating",
+        price: 199.99,
+        image: "assets/images/products/2.jpg",
+    }, {
+        name: "Acme Wireless Headphones",
+        description: "Immersive audio experience",
+        price: 79.99,
+        image: "assets/images/products/3.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/4.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/5.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/6.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/7.jpg",
+    }, {
+        name: "Acme Smart Home Hub",
+        description: "Control your home with voice commands",
+        price: 59.99,
+        image: "assets/images/products/8.jpg",
+    }];
+
+
+const HomeComponents: React.FC = () => {
+    return <main className="w-full">
+        <section className="container grid gap-6 md:gap-8 px-4 md:px-6 py-12 md:grid-cols-[240px_1fr] items-start">
+            <div className="flex flex-col gap-4 items-start py-2">
+                <Select>
+                    <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select category" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            <SelectItem value="electronics">Electronics</SelectItem>
+                            <SelectItem value="home-decor">Home Decor</SelectItem>
+                            <SelectItem value="clothing">Clothing</SelectItem>
+                            <SelectItem value="kitchen">Kitchen</SelectItem>
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
+                <Input
+                    type="search"
+                    placeholder="Search products..."
+                    className="w-full bg-background shadow-none appearance-none pl-4" />
+            </div>
+            <div className="grid gap-6 md:gap-8">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+                    <div className="grid gap-1">
+                        <h1 className="text-2xl font-bold tracking-tight">Featured Products</h1>
+                        <p className="text-muted-foreground">Check out our latest and greatest products.</p>
+                    </div>
+                </div>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+                    {product.map((item, index) => ({
+                        ...item,
+                        key: index,
+                    })).map((item) => (
+                        <div key={item.key} className="relative group grid [grid-template-areas:stack] overflow-hidden rounded-lg">
+                            {/* <Link href="/productDetail" >
+  <span className="sr-only">View</span>
+</Link> */}
+                            <img src={`${item.image}`}
+                                alt="Product Image"
+                                width={300}
+                                height={300}
+                                className="[grid-area:stack] object-cover w-full aspect-square" />
+                            <div className="flex-1 [grid-area:stack] bg-black/20 group-hover:opacity-90 transition-opacity text-white p-4 lg:p-6 justify-end flex flex-col gap-2">
+                                <Link href="/productDetail">
+                                    <h3 className="font-semibold tracking-tight">{item.name}</h3>
+                                    <small className="text-sm leading-none">{item.description}</small>
+                                    <h4 className="font-semibold">${item.price}</h4>
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>;
+}
+export default HomeComponents;
