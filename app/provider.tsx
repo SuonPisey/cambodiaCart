@@ -15,7 +15,6 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
   } else {
     return (
       <>
-        {" "}
         <Navigation />
         {children} <Footer />
       </>
