@@ -37,7 +37,7 @@ export default function Navigation() {
       <div className="container flex items-center justify-between h-16 px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           {/* <MountainIcon className="w-6 h-6" /> */}
-          <img src={Logo} alt="Acme Store" className="w-16 h-16" />
+          <img src={Logo} alt="Acme Store" className="w-10 h-10" />
           <span className="text-lg font-bold">Cambodia Cart</span>
         </Link>
         <div className="relative flex-1 max-w-md">

@@ -1,4 +1,4 @@
-// Code for Home page
+"use client";
 import { Input } from "../ui/input";
 import Link from "next/link";
 import {
@@ -9,6 +9,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { useQuery } from "@tanstack/react-query";
+import PRODUCT_API from "@/app/api/product";
+import Image from "next/image";
+
 const product = [
   {
     name: "Acme Turbo Blender",
@@ -205,6 +209,11 @@ const product = [
 ];
 
 const HomeComponents: React.FC = () => {
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: () => PRODUCT_API.getAllProducts(),
+  });
+
   return (
     <main className="w-full">
       <section className="container grid gap-6 md:gap-8 px-4 md:px-6 py-12 md:grid-cols-[240px_1fr] items-start">
@@ -240,39 +249,56 @@ const HomeComponents: React.FC = () => {
             </div>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-            {product
-              .map((item, index) => ({
-                ...item,
-                key: index,
-              }))
-              .map((item) => (
-                <div
-                  key={item.key}
-                  className="relative group grid [grid-template-areas:stack] overflow-hidden rounded-lg"
-                >
-                  {/* <Link href="/productDetail" >
-  <span className="sr-only">View</span>
-</Link> */}
-                  <img
-                    src={`${item.image}`}
-                    alt="Product Image"
-                    width={300}
-                    height={300}
-                    className="[grid-area:stack] object-cover w-full aspect-square"
-                  />
-                  <div className="flex-1 [grid-area:stack] bg-black/20 group-hover:opacity-90 transition-opacity text-white p-4 lg:p-6 justify-end flex flex-col gap-2">
-                    <Link href="/productDetail">
-                      <h3 className="font-semibold tracking-tight">
-                        {item.name}
-                      </h3>
-                      <small className="text-sm leading-none">
-                        {item.description}
-                      </small>
-                      <h4 className="font-semibold">${item.price}</h4>
-                    </Link>
-                  </div>
+            {/* {data?.result?.data.map((item) => (
+              <div
+                key={item.key}
+                className="relative group grid [grid-template-areas:stack] overflow-hidden rounded-lg"
+              >
+                <img
+                  src={`${item.image}`}
+                  alt="Product Image"
+                  width={300}
+                  height={300}
+                  className="[grid-area:stack] object-cover w-full aspect-square"
+                />
+                <div className="flex-1 [grid-area:stack] bg-black/20 group-hover:opacity-90 transition-opacity text-white p-4 lg:p-6 justify-end flex flex-col gap-2">
+                  <Link href="/productDetail">
+                    <h3 className="font-semibold tracking-tight">
+                      {item.name}
+                    </h3>
+                    <small className="text-sm leading-none">
+                      {item.description}
+                    </small>
+                    <h4 className="font-semibold">${item.price}</h4>
+                  </Link>
                 </div>
-              ))}
+              </div>
+            ))} */}
+            {data?.result?.data.map((item) => (
+              <div
+                key={item.id}
+                className="relative group grid [grid-template-areas:stack] overflow-hidden rounded-lg"
+              >
+                <Image
+                  src={`${item.image_thumbnail}`}
+                  alt="Product Image"
+                  width={300}
+                  height={300}
+                  className="[grid-area:stack] object-cover w-full aspect-square"
+                />
+                <div className="flex-1 [grid-area:stack] bg-black/20 group-hover:opacity-90 transition-opacity text-white p-4 lg:p-6 justify-end flex flex-col gap-2">
+                  <Link href="/productDetail">
+                    <h3 className="font-semibold tracking-tight">
+                      {item.name}
+                    </h3>
+                    <small className="text-sm leading-none">
+                      {item.description}
+                    </small>
+                    <h4 className="font-semibold">${item.how_to_use}</h4>
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

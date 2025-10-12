@@ -1,11 +1,13 @@
 "use client";
-import Footer from "@/components/footer";
 import Navigation from "@/components/navbar";
-import { useParams, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import AuthLayout from "./auth/authLayout";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const Provider = ({ children }: { children: React.ReactNode }) => {
   const route = usePathname();
+  const queryClient = new QueryClient();
+
   if (route.startsWith("/auth")) {
     return (
       <>
@@ -15,8 +17,12 @@ const Provider = ({ children }: { children: React.ReactNode }) => {
   } else {
     return (
       <>
-        <Navigation />
-        {children} <Footer />
+        {" "}
+        <QueryClientProvider client={queryClient}>
+          <Navigation />
+          {children}
+          {/* <Footer />  */}
+        </QueryClientProvider>
       </>
     );
   }
