@@ -1,16 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { Logo } from "@/config/image";
-import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import Link from "next/link";
 
 const menu: any[] = [
@@ -70,7 +60,7 @@ export default function Navigation() {
               </Link>
             </div>
           ))}
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="rounded-full">
                 <Avatar>
@@ -102,7 +92,7 @@ export default function Navigation() {
             <div className="absolute -top-2 -right-2 bg-primary text-primary-foreground rounded-full px-2 py-0.5 text-xs font-medium">
               3
             </div>
-          </Link>
+          </Link> */}
         </nav>
 
         {/* <DropdownMenu>
