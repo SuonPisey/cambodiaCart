@@ -280,7 +280,7 @@ const HomeComponents: React.FC = () => {
                 className="relative group grid [grid-template-areas:stack] overflow-hidden rounded-lg"
               >
                 <Image
-                  src={`${item.image_thumbnail}`}
+                  src={`/assets/images/products/1.jpg`}
                   alt="Product Image"
                   width={300}
                   height={300}
