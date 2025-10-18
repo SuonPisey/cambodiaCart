@@ -24,7 +24,7 @@ const slides: Slide[] = [
       "Experience the next generation of innovation. Built for creators, designed for excellence.",
     primaryCta: "Shop Now",
     secondaryCta: "Learn More",
-    image: "/modern-sleek-product-hero-shot.jpg",
+    image: "/img/modern-sleek-product-hero-shot.jpg",
     imageAlt: "Featured product showcase",
   },
   {
@@ -35,7 +35,7 @@ const slides: Slide[] = [
       "Exclusive collection that pushes boundaries. Premium quality meets cutting-edge technology.",
     primaryCta: "Explore Collection",
     secondaryCta: "View Details",
-    image: "/luxury-product-photography-dark-background.jpg",
+    image: "/img/luxury-product-photography-dark-background.jpg",
     imageAlt: "Limited edition product",
   },
   {
@@ -46,7 +46,7 @@ const slides: Slide[] = [
       "Join the community of satisfied customers. Proven performance, unmatched reliability.",
     primaryCta: "Get Started",
     secondaryCta: "See Reviews",
-    image: "/popular-product-lifestyle-shot.jpg",
+    image: "/img/popular-product-lifestyle-shot.jpg",
     imageAlt: "Best selling product",
   },
 ];

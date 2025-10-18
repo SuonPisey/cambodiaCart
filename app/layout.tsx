@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Cambodia Cart",
   description: "Your one-stop shop for everything!",
   icons: {
-    icon: "/logo.jpg",
+    icon: "/img/logo.jpg",
     shortcut: "/logo.jpg",
     apple: "/logo.jpg",
   },

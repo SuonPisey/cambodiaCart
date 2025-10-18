@@ -1,8 +1,6 @@
-import HomeComponents from "@/components/home"
+import ProductComponents from "@/components/product";
 
 const Product = () => {
-    return (
-        <HomeComponents />
-    )
-}
+  return <ProductComponents />;
+};
 export default Product;
