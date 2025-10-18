@@ -5,7 +5,6 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 import Provider from "./provider";
-
 const inter = Inter({ subsets: ["latin"] });
 const fontSans = FontSans({
   subsets: ["latin"],

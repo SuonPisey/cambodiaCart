@@ -12,6 +12,7 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import PRODUCT_API from "@/app/api/product";
 import Image from "next/image";
+import { HeroSlideshow } from "../slide";
 
 const product = [
   {
@@ -216,6 +217,8 @@ const HomeComponents: React.FC = () => {
 
   return (
     <main className="w-full">
+      {" "}
+      <HeroSlideshow />
       <section className="container grid gap-6 md:gap-8 px-4 md:px-6 py-12 md:grid-cols-[240px_1fr] items-start">
         <div className="flex flex-col gap-4 items-start py-2">
           <Select>
@@ -247,7 +250,7 @@ const HomeComponents: React.FC = () => {
                 Check out our latest and greatest products.
               </p>
             </div>
-          </div>
+          </div>{" "}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
             {/* {data?.result?.data.map((item) => (
               <div
