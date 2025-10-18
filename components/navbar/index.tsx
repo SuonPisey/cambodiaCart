@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Logo } from "@/config/image";
 import Link from "next/link";
 
-const menu: any[] = [
+const menu= [
   {
     name: "Home",
     link: "/",

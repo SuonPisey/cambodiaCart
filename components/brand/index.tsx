@@ -1,3 +1,6 @@
+"use client";
+import BRAND_API from "@/app/api/brand";
+import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 
 const Brand = [
@@ -23,6 +26,12 @@ const Brand = [
   },
 ];
 const BranComponent = () => {
+  const { data } = useQuery({
+    queryKey: ["brand"],
+    queryFn: () => BRAND_API.getAllBrand(),
+    refetchOnWindowFocus: false,
+  });
+  console.log("Brand data:", data);
   return (
     <div>
       <main className="flex-1 bg-background">
