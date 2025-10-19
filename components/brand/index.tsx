@@ -1,28 +1,29 @@
 "use client";
 import BRAND_API from "@/app/api/brand";
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 import Link from "next/link";
 
 const Brand = [
   {
     id: 1,
     name: "Clothing",
-    image: "assets/images/products/1.jpg",
+    image: "/assets/images/products/1.jpg",
   },
   {
     id: 2,
     name: "Shoes",
-    image: "assets/images/products/2.jpg",
+    image: "/assets/images/products/2.jpg",
   },
   {
     id: 3,
     name: "Accessories",
-    image: "assets/images/products/3.jpg",
+    image: "/assets/images/products/3.jpg",
   },
   {
     id: 4,
     name: "Electronics",
-    image: "assets/images/products/4.jpg",
+    image: "/assets/images/products/1.jpg",
   },
 ];
 const BranComponent = () => {
@@ -50,7 +51,7 @@ const BranComponent = () => {
                 >
                   <span className="sr-only">View</span>
                 </Link>
-                <img
+                <Image
                   src={item?.image}
                   alt={item?.name}
                   width={300}

@@ -1,8 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 interface Slide {
   id: number;
@@ -97,6 +99,7 @@ export function HeroSlideshow() {
                 src={slide.image || "/placeholder.svg"}
                 alt={slide.imageAlt}
                 className="w-full h-full object-cover"
+                
               />
               <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/30" />
             </div>

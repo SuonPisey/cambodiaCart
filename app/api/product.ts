@@ -1,5 +1,6 @@
 import { PaginationResponse } from "@/@types/baseRespone";
 import baseAxios from "@/lib/axios";
+import RouteServer from "@/lib/route";
 
 /**
  * Product API methods
@@ -18,7 +19,7 @@ const PRODUCT_API = {
     try {
       const res = await baseAxios.get<
         PaginationResponse<ProductType.ProductAll>
-      >("/product", {
+      >(RouteServer.product.root, {
         params: { limit, page },
       });
       return res.data;
