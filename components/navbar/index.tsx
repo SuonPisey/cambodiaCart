@@ -41,14 +41,14 @@ export default function Navigation() {
           <Image src={Logo} alt="Acme Store" width={40} height={40} />
           <span className="text-lg font-bold">Cambodia Cart</span>
         </Link>
-        <div className="relative flex-1 max-w-md">
+        {/* <div className="relative flex-1 max-w-md">
           <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
             type="search"
             placeholder="Search products..."
             className="pl-10 w-full rounded-md bg-muted focus:ring-primary focus:border-primary"
           />
-        </div>
+        </div> */}
         <nav className="hidden md:flex items-center gap-4">
           {menu.map((item, index) => (
             <div key={index}>

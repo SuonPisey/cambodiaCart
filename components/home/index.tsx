@@ -57,9 +57,9 @@ const HomeComponents: React.FC = () => {
             </div>
           </div>{" "}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-            {data?.result?.data.map((item) => (
+            {data?.result?.data.map((item, key) => (
               <div
-                key={item.id}
+                key={key}
                 className="relative group grid [grid-template-areas:stack] overflow-hidden rounded-lg"
               >
                 <Image
@@ -70,14 +70,14 @@ const HomeComponents: React.FC = () => {
                   className="[grid-area:stack] object-cover w-full aspect-square"
                 />
                 <div className="flex-1 [grid-area:stack] bg-black/20 group-hover:opacity-90 transition-opacity text-white p-4 lg:p-6 justify-end flex flex-col gap-2">
-                  <Link href="/productDetail">
+                  <Link href={`product/${item.id}`} className="flex flex-col gap-1">
                     <h3 className="font-semibold tracking-tight">
-                      {item.name}
+                      {item.name.en}
                     </h3>
                     <small className="text-sm leading-none">
                       {item.description}
                     </small>
-                    <h4 className="font-semibold">${item.how_to_use}</h4>
+                    <h4 className="font-semibold">${item.name.en}</h4>
                   </Link>
                 </div>
               </div>

@@ -70,12 +70,12 @@ const ProductComponents: React.FC = () => {
                 <div className="flex-1 [grid-area:stack] bg-black/20 group-hover:opacity-90 transition-opacity text-white p-4 lg:p-6 justify-end flex flex-col gap-2">
                   <Link href="/productDetail">
                     <h3 className="font-semibold tracking-tight">
-                      {item.name}
+                      {item.name.en}
                     </h3>
                     <small className="text-sm leading-none">
                       {item.description}
                     </small>
-                    <h4 className="font-semibold">${item.how_to_use}</h4>
+                    <h4 className="font-semibold">${item.how_to_use.en}</h4>
                   </Link>
                 </div>
               </div>

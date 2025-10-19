@@ -21,7 +21,12 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Image from "next/image";
 
-const ProductDetailComponent = () => {
+const ProductDetailComponent = ({
+  data,
+}: {
+  data: ProductType.ProductDetail | undefined;
+}) => {
+  console.log("Rendering ProductDetailComponent with data:");
   const [selectedColor, setSelectedColor] = useState("black");
   const [selectedSize, setSelectedSize] = useState("m");
 
@@ -64,14 +69,14 @@ const ProductDetailComponent = () => {
       </div>
       <div className="grid gap-6">
         <div>
-          <h1 className="text-3xl font-bold">Acme Prism T-Shirt</h1>
+          <h1 className="text-3xl font-bold">{data?.name?.en}</h1>
           <p className="text-muted-foreground">
             A stylish and comfortable t-shirt with a unique prism design.
           </p>
         </div>
         <div className="flex items-center gap-4">
-          <span className="text-4xl font-bold">$49.99</span>
-          <Button size="lg">Add to Cart</Button>
+          <span className="text-4xl font-bold"> </span>
+          <Button size="lg">Contact to telegram</Button>
         </div>
         <div>
           <h2 className="text-xl font-bold mb-4">Product Details</h2>

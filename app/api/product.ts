@@ -1,4 +1,4 @@
-import { PaginationResponse } from "@/@types/baseRespone";
+import { BaseResponse, PaginationResponse } from "@/@types/baseRespone";
 import baseAxios from "@/lib/axios";
 import RouteServer from "@/lib/route";
 
@@ -24,7 +24,6 @@ const PRODUCT_API = {
       });
       return res.data;
     } catch (error: any) {
-      // Improved error logging
       console.error("Failed to fetch products:", {
         message: error.message,
         response: error.response?.data,
@@ -33,6 +32,26 @@ const PRODUCT_API = {
         error.response?.data?.message ||
           error.message ||
           "Failed to fetch products"
+      );
+    }
+  },
+  async getProductById(
+    id: string
+  ): Promise<BaseResponse<ProductType.ProductDetail>> {
+    try {
+      const res = await baseAxios.get<BaseResponse<ProductType.ProductDetail>>(
+        `${RouteServer.product.root}/${id}`
+      );
+      return res.data;
+    } catch (error: any) {
+      console.error("Failed to fetch product by ID:", {
+        message: error.message,
+        response: error.response?.data,
+      });
+      throw new Error(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to fetch product by ID"
       );
     }
   },
